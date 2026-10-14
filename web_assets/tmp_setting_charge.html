@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>
+<%var lang = args["language_type"]; %>
+<div id="Set_Charge">
+    <div class="table-container margin-n">                    
+    <div class="table-title"><span>Battery Charge</span></div>
+        <div class="table-list padding-tn">
+        <form action="../cgi-bin/web_cgi_control.cgi" id="settingForm" method="post">
+        <div class="table">
+            <div class="table-header">
+                <ul>
+                    <li class="t-1"><strong class="left pl">Signal</strong></li>
+                    <li class="t-2"><strong class="left pl">Value</strong></li>
+                    <li class="t-3"><strong class="left pl">Time Last Set</strong></li>
+                    <li class="t-4"><strong class="left pl">Set Value</strong></li>
+                    <li class="t-5"><strong>Set</strong></li>
+                </ul>
+            </div>
+            <div class="table-body">
+                    <%
+                    if(data.list && data.list.length>0){
+                    for(var i=0,ilen=data.list.length;i<ilen; i++){ 
+						  var hasAuthority = args["level"]>=data.list[i][4];
+						  var ControlSignal = (data.list[i][2] == 1) ? true : false;
+						  var ControlDisabled = (ControlSignal && data.list[i][12]==0 || !hasAuthority) ? true : false;
+                        if(data.list[i][5]>0){
+                            var setTimeStr = Pages.SetSettingDate(data.list[i][5]);
+                        } else {
+                            var setTimeStr = "--";
+                        }
+                        var RectifierExpansion = data.list[i][1]==1 && data.list[i][2]==2 && data.list[i][3]==180;
+                    %>
+                <ul class= "<%if(i%2==0){%> gray <%if(i==ilen-1){ %> bottom_line <%}}else{ %><%if(i==ilen-1){ %> bottom_line2 <%}} %>" id="<%=data.list[i][1] %>_<%=data.list[i][2] %>_<%=data.list[i][3] %>">
+                    <li class="t-1"><span class="left pl" title="<%=data.list[i][0][lang] %>"><%=data.list[i][0][lang] %></span></li>
+                    <li class="t-2"><span class="left pl">
+                        <%if(ControlSignal && data.list[i][10].length==1){ %>
+                    <%=data.list[i][10][0][lang] %>
+                    <%}else{ %>
+                    <%if(data.list[i][8]==5){ %><%=data.list[i][10][data.list[i][9]][lang]%> <%}else{ %><%=data.list[i][9] %><%};if(typeof data.list[i][10] =="string"){ %><%=data.list[i][10]%><%};} %></span></li>
+                    <li class="t-3"><span class="left pl"><%=setTimeStr %></span></li>
+                    <li class="t-4">
+                          
+                          
+                          <%if(data.list[i][8]==5){
+                             if(data.list[i][10].length<=2){ %>
+                                <span class="left pl radio">
+                                <fieldset class="set_value">
+                                <%                    
+                                for(var j=0,jlen=data.list[i][10].length; j<jlen;j++){ 
+                                var inputValue = (jlen==1)? 1: j;
+                                %>
+                                <div name="control_<%=i %>" value="<%=inputValue %>" <%if(j==0){if(ControlDisabled){%>class="radiodiv disradiodiv"<%}else{%>class="radiodiv"<%}}else{if(ControlDisabled){%>class="radiodiv disradiodivnot"<%}else{%>class="radiodiv radiodivnot "<%}}%>><label><%=data.list[i][10][j][lang]%></label></div>
+                                <%} %>
+                                </fieldset>
+                                </span>
+                            <%}else { %>
+                            <span class="left pl selectsp">
+                              <div class="dropdown">
+                                    <div name="control_<%=i %>" <%if(ControlDisabled){ %> class="input_select set_disabled"<%} else { %> class="input_select set_value" <%} %> data-index="0"><%=data.list[i][10][0][lang]%></div>
+                                    <ul class="language yinc">
+                                    <%for(var j=0,jlen=data.list[i][10].length; j<jlen;j++){ %>                     
+                                         <li><a href="javascript:void(0)" rel="<%=j %>"><%=data.list[i][10][j][lang]%></a></li>
+                                    <%} %>
+                                    </ul>
+                              </div>
+                              </span>
+                            <%}} else { %>
+                                <span class="left pl text"><input type="text" value="" name="control_<%=i %>" <%if(ControlDisabled){ %> disabled="disabled" class="set_disabled"<%} else { %> class="set_value" <%} %> validate='{"type":<%=data.list[i][8] %>,"range":[<%=data.list[i][7]%>,<%=data.list[i][6]%>]}' /> <i><%=data.list[i][7] %>~<%=data.list[i][6] %></i></span><%}%>
+                    
+                        </li>
+                        <li class="t-5"><a href="#" hidefocus="true" class="btn_set <%if(ControlSignal){ %> set_control<%}%> <%if(ControlDisabled){%> btn_set_disabled<%}%> <%if(RectifierExpansion){ %> set_RectifierExpansion<%} %>"
+						<%if(!ControlDisabled){%>
+							post="equip_ID=<%=data.list[i][1]%>&signal_type=<%=data.list[i][2] %>&signal_id=<%=data.list[i][3] %>&value_type=<%=data.list[i][8] %>&control_type=1" 
+							<%if(ControlSignal){ %> tip="<%=jQuery.toJSON(data.list[i][11]) %>" <%} else { %> value="<%=data.list[i][9]%>"<%} %>
+						<%}%>><i>Set</i></a></li>
+                    </ul>
+                    <%};} else { %>
+                    <div class="system-no-data">No data.</div>
+                    <%} %>
+                </div>
+            </div>
+            </form>
+        </div>
+      </div>
+  </div>
+</body></html>
