@@ -1,0 +1,2 @@
+﻿code,ip,status,stop_before,stop_after,writes,verified,mismatches,error,old_json,target_json,after_json
+SSA,,NO_IP_MAPPING,,,,,,Exact station code not found in Rectifier.xlsx,,,

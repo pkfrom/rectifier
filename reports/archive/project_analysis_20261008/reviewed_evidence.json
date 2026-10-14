@@ -1,0 +1,262 @@
+{
+  "stations": 190,
+  "collection_start": "2026-10-08T01:14:43+07:00",
+  "collection_end": "2026-10-08T01:15:12+07:00",
+  "metrics": {
+    "Output Voltage (V)": {
+      "n": 190,
+      "missing": 0,
+      "min": 52.5,
+      "max": 54.0,
+      "median": 53.3
+    },
+    "System Load (A)": {
+      "n": 190,
+      "missing": 0,
+      "min": 6.2,
+      "max": 13.9,
+      "median": 6.75
+    },
+    "Battery Temp (°C)": {
+      "n": 188,
+      "missing": 2,
+      "min": 18.0,
+      "max": 39.0,
+      "median": 27.0
+    },
+    "Ambient Temp (°C)": {
+      "n": 190,
+      "missing": 0,
+      "min": 19.0,
+      "max": 40.0,
+      "median": 28.0
+    },
+    "Estimated Backup Time (h)": {
+      "n": 171,
+      "missing": 19,
+      "min": 10.8,
+      "max": 26.4,
+      "median": 14.8
+    },
+    "Battery Capacity (%)": {
+      "n": 190,
+      "missing": 0,
+      "min": 100.0,
+      "max": 100.0,
+      "median": 100.0
+    }
+  },
+  "settings_audit": [
+    {
+      "field": "Under Voltage 1 (V)",
+      "target": 48,
+      "observed": 190,
+      "pass": 190,
+      "mismatch": 0,
+      "missing": 0
+    },
+    {
+      "field": "Under Voltage 2 (V)",
+      "target": 46,
+      "observed": 190,
+      "pass": 190,
+      "mismatch": 0,
+      "missing": 0
+    },
+    {
+      "field": "LVD 1 Status",
+      "target": "Enabled",
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "LVD 2 Status",
+      "target": "Enabled",
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "LVD 1 Disconnect Voltage (V)",
+      "target": 43.2,
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "LVD 2 Disconnect Voltage (V)",
+      "target": 43.2,
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "LVD 1 Reconnect Voltage (V)",
+      "target": 49,
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "LVD 2 Reconnect Voltage (V)",
+      "target": 49,
+      "observed": 189,
+      "pass": 189,
+      "mismatch": 0,
+      "missing": 1
+    },
+    {
+      "field": "Batt End Test Capacity (%)",
+      "target": 70,
+      "observed": 190,
+      "pass": 190,
+      "mismatch": 0,
+      "missing": 0
+    },
+    {
+      "field": "Batt End Test Time (min)",
+      "target": 30,
+      "observed": 190,
+      "pass": 91,
+      "mismatch": 99,
+      "missing": 0
+    },
+    {
+      "field": "Walk-In Status",
+      "target": "Enabled",
+      "observed": 190,
+      "pass": 190,
+      "mismatch": 0,
+      "missing": 0
+    },
+    {
+      "field": "Walk-In Time (s)",
+      "target": 8,
+      "observed": 190,
+      "pass": 190,
+      "mismatch": 0,
+      "missing": 0
+    }
+  ],
+  "raw_count": 52543,
+  "float_count": 16682,
+  "non_numeric_interpreted_float": 15737,
+  "sources": [
+    {
+      "path": "Rectifier.xlsx",
+      "sha256": "26aec413caa072095543292999e5fe9f5f8f5f46a72a006558dbf10a49464aac",
+      "modified": 1791278648.4949179
+    },
+    {
+      "path": "reports\\Rectifier_Abnormal_Report.xlsx",
+      "sha256": "274e12469dec49dce7aa2354c1b60eb7b0f0f438ce107308cd38ae0dc7ef2f2e",
+      "modified": 1791280601.845837
+    },
+    {
+      "path": "reports\\Rectifier_All_Parameters_All_Sites_Latest.xlsx",
+      "sha256": "0633a1ed7c2da45ae1510bbbcac5c55c238e8d4ab11617948726f6c8475bb8e1",
+      "modified": 1791279362.4024875
+    },
+    {
+      "path": "reports\\Rectifier_Inventory_188_Sites.xlsx",
+      "sha256": "c855eaeb9e967e7bff57b48209a48ddf63d992988daed3c6d0bbc595e7e41f88",
+      "modified": 1791396943.639377
+    },
+    {
+      "path": "README.md",
+      "sha256": "173a92620a16b10924939ff3e42662b53121e6b4c95f6cbea0f0b2b73faaca47",
+      "modified": 1791278819.9959297
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "f1844ad8906b0e45aeef2d0c65d6c0c1bb4109bf069c45a67bda1517d42328f1",
+      "modified": 1788770062.4949658
+    },
+    {
+      "path": "scripts\\apply_excel_updates.py",
+      "sha256": "0f8723011646cd6ad8f6a945b01349a3d8e6637a4acc8a8631e6c817abefd44f",
+      "modified": 1791278791.828534
+    },
+    {
+      "path": "scripts\\apply_extra_settings.py",
+      "sha256": "f2b9eece66b987bf4712a13b0ef44bf2e5a149a01c9bbe301ffa35754a31bbe5",
+      "modified": 1790974606.2302473
+    },
+    {
+      "path": "scripts\\build_docx_report.py",
+      "sha256": "d36e69ef26ef198f3d04c36575de3d29e116ffc6cf82eec5eb98ff95cc4e4c23",
+      "modified": 1791278727.9971797
+    },
+    {
+      "path": "scripts\\collect_all_parameters_all_sites.py",
+      "sha256": "69cfefde1cd502e0e9a6840ccf07e03e7e31297113cf0b11bac2d0f21bd7caa6",
+      "modified": 1791278591.1182332
+    },
+    {
+      "path": "scripts\\collect_rectifier_inventory.py",
+      "sha256": "e619c6743c9151052678664be13fb5f7a89be7994614e2adda6ff5f6e6b611fd",
+      "modified": 1791278572.547618
+    },
+    {
+      "path": "scripts\\collect_rectifier_playwright.py",
+      "sha256": "9480da1c53633f9fc297f507e101fec3e2f0bb1988799bb7a0806dbc5c180079",
+      "modified": 1791278657.283216
+    },
+    {
+      "path": "scripts\\compare_target_settings.py",
+      "sha256": "041f615a0805ede662d8345b7df123eb309c1c2ec03771b27e71214098265d7b",
+      "modified": 1790974063.093424
+    },
+    {
+      "path": "scripts\\configure_and_verify_stations.py",
+      "sha256": "e310f23e1d5cc26384fd1e75aa1abdd0eee1f10daabc065777fcdd166cc5b498",
+      "modified": 1790974278.7696023
+    },
+    {
+      "path": "scripts\\generate_comprehensive_word_report.py",
+      "sha256": "5c457bf5f6512654b5422bc31a22a7f53f45f130b17d167ed181e1ed5c86eb67",
+      "modified": 1791280562.7074072
+    },
+    {
+      "path": "scripts\\generate_full_sarabun_report.py",
+      "sha256": "2b7d275faece077a946513ba98e0bdfc2ca87d9bd67452ef0895def1d31a8b31",
+      "modified": 1791280720.8612418
+    },
+    {
+      "path": "scripts\\generate_report_charts.py",
+      "sha256": "36cde898857caab40b2b8d1acc34dc789621796b435102352f8e42582970e5bb",
+      "modified": 1791280046.043965
+    },
+    {
+      "path": "scripts\\rebuild_reports.py",
+      "sha256": "2667972e3e2a6c42daa09c73fd338da6017fc462e60396cb7c1c57a3209a0be8",
+      "modified": 1791279195.336169
+    },
+    {
+      "path": "scripts\\set_equalize.py",
+      "sha256": "ef9d321cb3d62ae334f6fd542eab104d8fd918e04d92af77b1aef61ca8c37d4d",
+      "modified": 1790758345.4599302
+    },
+    {
+      "path": "scripts\\set_uv_cg_lnb.py",
+      "sha256": "56b5cfe128cb4dada7e133eeda87e22447ba73832e250924eeedab587e1acd63",
+      "modified": 1791051545.7946217
+    },
+    {
+      "path": "scripts\\update_docx_report.py",
+      "sha256": "be5c4378a6afb3e935094031deb1630285285005b088bbd8f1eb6a54ee9a408b",
+      "modified": 1791278712.018618
+    },
+    {
+      "path": "scripts\\update_reports.py",
+      "sha256": "6d499d61d935e6872f08099c1f70675059e45fe8e3f720279cd47f8501522efb",
+      "modified": 1791278692.945598
+    }
+  ]
+}

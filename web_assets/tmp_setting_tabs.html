@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>
+<%var lang = args["language_type"]; %>
+<div id="mainTab">
+    <a class="tab-al tab-al-disabled"></a>
+    <div id="mainTabContent">
+    <%var common = data.COMMON;%>
+     <a class="currentMenu" data='{"data":"/var/datas/data.install_wizard.html","template":"tmp.setting_tabs.html,tmp.install_wizard.html","fn":"Setting","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Quick Settings</span></a>
+	 <%if(common["CABINET_EXIST"]==0){ %>
+	 <a data='{"data":"/var/datas/data.consumption_map.html,CabinetBranch:/var/datas/data.cabinet_map.html","template":"{CabinetBranch}:tmp.cabinet_branch.html,tmp.cabinet_set.html","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Set Cabinet</span></a>
+     <%}; if(common["SYSTEM_EXIST"]==0){ %>
+     <a data='{"name":"PowerSystem","data":"/var/datas/data.sys_setting.html","template":"tmp.setting_power_system.html","fn":"Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>System</span></a>
+     <%};if(common["UDEF4_EXIST"]==0){ %>
+    <a data='{"name":"UDEF_SET_4","data":"/var/datas/data.udef_setting.html","template":"tmp.udef_setting.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>User Config4</span></a>
+    <%};if(common["CHARGE_EXIST"]==0){ %>
+    <a data='{"name":"CHARGE","data":"/var/datas/data.setting.html","template":"tmp.setting_charge.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Battery Charge</span></a>
+    <%};if(common["ECO_EXIST"]==0){ %>
+    <a data='{"name":"ECO","data":"/var/datas/data.setting.html","template":"tmp.setting_eco.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>ECO</span></a>
+    <%};if(common["LVD_EXIST"]==0){ %>
+    <a data='{"name":"LVD","data":"/var/datas/data.setting.html","template":"tmp.setting_lvd.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>LVD</span></a>
+    <%};if(common["TEMPERATURE_EXIST"]==0){ %>
+    <a data='{"name":"TEMPERATURE","data":"/var/datas/data.setting.html","template":"tmp.setting_temp.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Temperature</span></a>
+    <%};if(common["RECT_EXIST"]==0){ %>
+    <a data='{"name":"RECT","data":"/var/datas/data.setting.html","template":"tmp.setting_rectifiers.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Rectifiers</span></a>
+    <%};if(common["CONVERTER_EXIST"]==0){ %>
+    <a data='{"name":"CONVERTER","data":"/var/datas/data.setting.html","template":"tmp.setting_converter.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>DC/DC Converters</span></a>
+    <%};if(common["MPPT_EXIST"]==0){ %>
+    <a data='{"name":"MPPT","data":"/var/datas/data.setting.html","template":"tmp.setting_mppt.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Solar</span></a>
+    <%};if(common["BATT_TEST_EXIST"]==0){ %>
+    <a data='{"name":"BATT_TEST","data":"/var/datas/data.setting.html","template":"tmp.setting_batteryTest.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>Battery Test</span></a>
+    <%}%>
+
+    <a data='{"data":"../cgi-bin/web_cgi_setting.cgi",parameter:"_modify_configure_detail=6&_modify_configure=4&sessionId=<%=args['sessionId']%>&language_type=<%=args['language_type'] %>","method":"post",sync:false,"template":"tmp.setting_time_sync.html",sync:true,"fn":"date_time_picker_min,date_time_picker","menuIndex":"2",modules:"mainBody"}' hidefocus="true" href="#"><span>Time Settings</span></a>
+	<!-- added by Jimmy 2014.03.17 for user config page -->
+    <%if(common["UDEF1_EXIST"]==0){ %>
+    <a data='{"name":"UDEF_SET_1","data":"/var/datas/data.udef_setting.html","template":"tmp.udef_setting.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>User Config1</span></a>
+    <%};if(common["UDEF2_EXIST"]==0){ %>
+    <a data='{"name":"UDEF_SET_2","data":"/var/datas/data.udef_setting.html","template":"tmp.udef_setting.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>User Config2</span></a>
+    <%};if(common["UDEF3_EXIST"]==0){ %>
+    <a data='{"name":"UDEF_SET_3","data":"/var/datas/data.udef_setting.html","template":"tmp.udef_setting.html","fn":"false,Setting","modules":"mainBody","menuIndex":"2","render":"artTemplate"}' hidefocus="true" href="#"><span>User Config3</span></a>
+    <%}%>
+    </div>
+    <a class="tab-ar tab-ar-disabled"></a>
+</div>
+</body></html>

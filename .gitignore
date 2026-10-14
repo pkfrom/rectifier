@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.tmp
+.vscode/
+.idea/
+
+# Local credentials and environment-specific settings
+.env
+.env.*
+!.env.example
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+
+# Generated and machine-specific output
+outputs/
+Thumbs.db
